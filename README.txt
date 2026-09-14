@@ -1,29 +1,19 @@
-DailyDesk Landing Page v3
-=========================
+DailyDesk Premium Website v4
 
-Files:
-- index.html
-- styles.css
-- privacy.html
-- icon48.png
-- icon128.png
+Features included in this website redesign:
+- Colorful gradient visual system
+- Animated hero, floating cards, reveal-on-scroll effects and subtle parallax
+- Improved sticky navigation and mobile menu
+- Full feature coverage for current DailyDesk functionality
+- Dedicated Pro wellness section
+- Detailed Free vs Pro explanation
+- Interactive pricing cards: Yearly (₹299) is highlighted by default; hovering/focusing another plan makes that plan the active highlight and temporarily de-emphasizes Yearly
+- Explicit planned-feature labels for Cloud Sync and AI insights
+- Account-based Pro restore explanation
+- Updated FAQ and privacy page
 
-What changed:
-- Premium dark/light visual system
-- Sticky navigation with mobile menu
-- Hero redesign with app preview
-- Expanded feature content
-- Pro Wellness section
-- Pro feature matrix
-- Updated pricing for Monthly / Quarterly / Yearly / Lifetime
-- Free vs Pro comparison
-- FAQ section
-- Strong final call-to-action
-- Responsive mobile design
-- Premium hover/reveal interactions
-
-Before production:
+Before production launch:
 - Replace YOUR-EMAIL@example.com
-- Replace #contact/#pricing purchase buttons with live Chrome Web Store / Razorpay links
-- Review and finalize privacy policy
-- Connect production payment and account/restore flows
+- Connect production Chrome Web Store URL
+- Connect production Razorpay checkout links
+- Review final pricing, feature availability and privacy text
