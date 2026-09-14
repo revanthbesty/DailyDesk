@@ -1,22 +1,29 @@
-DAILYDESK LANDING PAGE
-========================
-This folder is ready for GitHub Pages.
+DailyDesk Landing Page v3
+=========================
 
-Before publishing:
-1. Replace YOUR-EMAIL@example.com in index.html with your support email.
-2. Replace the Chrome Web Store placeholder links after the extension is published.
-3. Review privacy.html and replace its contact placeholder.
-4. Do not advertise paid checkout until your payment provider and premium activation are actually connected.
+Files:
+- index.html
+- styles.css
+- privacy.html
+- icon48.png
+- icon128.png
 
-Recommended GitHub Pages:
-Repository -> Settings -> Pages -> Deploy from branch -> main / root.
+What changed:
+- Premium dark/light visual system
+- Sticky navigation with mobile menu
+- Hero redesign with app preview
+- Expanded feature content
+- Pro Wellness section
+- Pro feature matrix
+- Updated pricing for Monthly / Quarterly / Yearly / Lifetime
+- Free vs Pro comparison
+- FAQ section
+- Strong final call-to-action
+- Responsive mobile design
+- Premium hover/reveal interactions
 
-The page is static HTML/CSS and requires no server.
-
-Pricing updated:
-Monthly ₹49
-Quarterly ₹99 / 3 months
-Yearly ₹299
-Lifetime ₹599
-
-Checkout is intentionally not connected yet.
+Before production:
+- Replace YOUR-EMAIL@example.com
+- Replace #contact/#pricing purchase buttons with live Chrome Web Store / Razorpay links
+- Review and finalize privacy policy
+- Connect production payment and account/restore flows
