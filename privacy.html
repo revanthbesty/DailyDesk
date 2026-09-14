@@ -8,12 +8,59 @@
   <title>DailyDesk — Privacy & Purchase Policy</title>
   <link rel="icon" href="icon128.png">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ==========================================================
+       DailyDesk Legal / Policy page
+       Purpose: clean, readable, professional SaaS-style legal UI.
+       ========================================================== */
+    .legal-shell{width:min(100% - 40px,1180px);margin:0 auto}
+    .legal-hero{padding:70px 0 48px}
+    .legal-hero-inner{position:relative;overflow:hidden;border-radius:34px;padding:54px 58px;background:linear-gradient(135deg,#08132f 0%,#243d86 50%,#7a2d73 100%);color:#fff;box-shadow:0 30px 90px rgba(33,45,95,.18)}
+    .legal-hero-inner:before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 15% 20%,rgba(77,129,255,.34),transparent 25%),radial-gradient(circle at 85% 15%,rgba(240,95,205,.3),transparent 24%),radial-gradient(circle at 65% 100%,rgba(47,216,201,.16),transparent 22%);animation:legalDrift 18s ease-in-out infinite alternate}
+    .legal-hero-inner>*{position:relative;z-index:1}
+    .legal-kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:900;letter-spacing:.14em;color:#d6e1ff}
+    .legal-kicker:before{content:"";width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#70a2ff,#f28edc);box-shadow:0 0 0 7px rgba(255,255,255,.08)}
+    .legal-hero h1{font:800 clamp(44px,6vw,72px)/1.02 Manrope;letter-spacing:-.06em;margin:16px 0 18px;max-width:860px}
+    .legal-hero h1 span{background:linear-gradient(90deg,#8eb2ff,#f7a3df,#78e3d0);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .legal-hero p{max-width:780px;margin:0;color:#d8e1f4;font-size:18px;line-height:1.8}
+    .legal-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}.legal-meta span{padding:9px 13px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.08);border-radius:999px;font-size:13px;color:#e0e7f6}
+
+    .legal-main{padding:0 0 110px}
+    .legal-grid{display:grid;grid-template-columns:230px minmax(0,760px);gap:58px;justify-content:center;align-items:start}
+    .legal-toc{position:sticky;top:104px}
+    .legal-toc-card{padding:19px 15px;border:1px solid #dbe4f0;border-radius:20px;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);box-shadow:0 16px 38px rgba(31,52,94,.06)}
+    .legal-toc-title{font-size:12px;font-weight:900;letter-spacing:.13em;color:#71809a;padding:0 9px 11px}
+    .legal-toc a{display:block;padding:10px 11px;border-radius:11px;color:#60708a;font-size:14px;font-weight:700;line-height:1.3;transition:all .2s ease}
+    .legal-toc a:hover,.legal-toc a.active{color:#283d67;background:linear-gradient(135deg,#eef4ff,#fbf0ff)}
+    .legal-toc .toc-tip{margin:14px 8px 2px;padding:12px;border-radius:14px;background:linear-gradient(135deg,#f1f6ff,#fdf1fb,#effcf9);font-size:12px;line-height:1.6;color:#6d7990}
+
+    .legal-content{min-width:0}
+    .legal-intro{margin-bottom:30px;padding:24px 26px;border-radius:20px;background:linear-gradient(135deg,#eef4ff,#fff5fb,#effcf9);border:1px solid #dce6f2}
+    .legal-intro strong{display:block;font-size:15px;color:#253b62;margin-bottom:6px}.legal-intro span{font-size:15px;line-height:1.7;color:#65758f}
+    .legal-section{position:relative;padding:0 0 42px;margin:0 0 42px;border-bottom:1px solid #e1e7f0;scroll-margin-top:120px}
+    .legal-section:last-child{border-bottom:0;margin-bottom:0}
+    .legal-num{display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:28px;padding:0 10px;border-radius:999px;background:linear-gradient(135deg,#edf3ff,#f8edff);color:#6263be;font-size:12px;font-weight:900;letter-spacing:.08em}
+    .legal-section h2{font:800 clamp(28px,3vw,36px)/1.16 Manrope;letter-spacing:-.04em;color:#14284b;margin:13px 0 13px}
+    .legal-section p,.legal-section li{font-size:18px;line-height:1.82;color:#596b86}
+    .legal-section p{margin:0}.legal-section ul{margin:15px 0 0;padding-left:24px}.legal-section li+li{margin-top:8px}
+    .legal-note{margin-top:18px;padding:16px 18px;border-radius:16px;background:#f8faff;border:1px solid #dee6f1;color:#64748b;font-size:15px;line-height:1.7}
+    .legal-callout{padding:24px 25px;border-radius:20px;background:linear-gradient(135deg,#fff4f1 0%,#fff 52%,#fff1fa 100%);border:1px solid #efcec8;box-shadow:0 16px 36px rgba(121,66,90,.07)}
+    .legal-callout .legal-num{background:linear-gradient(135deg,#fff0e8,#ffeafb);color:#a04c6c}.legal-callout h2{color:#67334a}
+    .legal-callout p{color:#6b5965}
+    .legal-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .legal-actions a{min-height:48px;display:inline-flex;align-items:center;justify-content:center;padding:0 18px;border-radius:14px;font-size:15px;font-weight:900;transition:transform .2s ease,box-shadow .2s ease}
+    .legal-actions a:hover{transform:translateY(-2px)}
+    .legal-primary{color:#fff;background:linear-gradient(135deg,#4b79ff,#8158f2,#d759c7);box-shadow:0 15px 30px rgba(84,82,214,.18)}
+    .legal-secondary{color:#25395c;background:#fff;border:1px solid #d6dfeb}
+
+    @keyframes legalDrift{from{transform:translate3d(-1%,0,0) scale(1)}to{transform:translate3d(2%,-2%,0) scale(1.04)}}
+    @media(max-width:900px){.legal-shell{width:min(100% - 28px,760px)}.legal-hero{padding-top:48px}.legal-hero-inner{padding:38px 28px}.legal-grid{grid-template-columns:1fr;gap:20px}.legal-toc{position:relative;top:auto}.legal-toc-card{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;padding:13px}.legal-toc-title{grid-column:1/-1;padding-bottom:6px}.legal-toc .toc-tip{grid-column:1/-1;margin-top:8px}.legal-toc a{padding:10px}.legal-section p,.legal-section li{font-size:17px}}
+    @media(max-width:600px){.legal-hero h1{font-size:46px}.legal-hero p{font-size:17px}.legal-content{padding:0 2px}.legal-toc-card{grid-template-columns:1fr 1fr}.legal-toc a{font-size:14px}.legal-section h2{font-size:29px}.legal-section p,.legal-section li{font-size:17px;line-height:1.75}.legal-meta span{font-size:12px}.legal-main{padding-bottom:70px}}
+    @media(prefers-reduced-motion:reduce){.legal-hero-inner:before{animation:none}}
+  </style>
 </head>
 <body class="policy-page">
-  <div class="site-bg" aria-hidden="true">
-    <div class="mesh mesh-1"></div><div class="mesh mesh-2"></div><div class="mesh mesh-3"></div>
-    <div class="stars"></div>
-  </div>
+  <div class="site-bg" aria-hidden="true"><div class="mesh mesh-1"></div><div class="mesh mesh-2"></div><div class="mesh mesh-3"></div><div class="stars"></div></div>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <header class="header" id="top">
@@ -35,92 +82,94 @@
   </header>
 
   <main>
-    <section class="policy-hero section">
-      <div class="policy-hero-card reveal visible">
-        <span class="eyebrow">PRIVACY & PURCHASE POLICY</span>
-        <h1>Clear policies. <span>No surprises.</span></h1>
-        <p>DailyDesk is designed to keep the everyday experience simple and local-first. This page explains what the product is designed to store, what Pro activation requires, and the current purchase and refund policy.</p>
-        <div class="policy-meta">
-          <span>Last updated: September 14, 2026</span>
-          <span>Plain-language summary</span>
-          <span>DailyDesk Pro</span>
+    <section class="legal-hero">
+      <div class="legal-shell">
+        <div class="legal-hero-inner">
+          <span class="legal-kicker">PRIVACY & PURCHASE POLICY</span>
+          <h1>Clear policies. <span>No surprises.</span></h1>
+          <p>DailyDesk is designed to keep the everyday experience simple and local-first. This page explains what the product is designed to store, what Pro activation requires, and the current purchase and refund policy.</p>
+          <div class="legal-meta"><span>Last updated · September 14, 2026</span><span>Plain-language summary</span><span>DailyDesk Pro</span></div>
         </div>
       </div>
     </section>
 
-    <section class="section policy-layout">
-      <aside class="policy-nav" aria-label="Policy navigation">
-        <b>ON THIS PAGE</b>
-        <a href="#overview">Overview</a>
-        <a href="#collection">Information collected</a>
-        <a href="#payments">Payments & Pro</a>
-        <a href="#restore">Restore Pro</a>
-        <a href="#refunds">Refund policy</a>
-        <a href="#future">Future features</a>
-        <a href="#contact">Contact</a>
-      </aside>
+    <section class="legal-main">
+      <div class="legal-shell">
+        <div class="legal-grid">
+          <aside class="legal-toc" aria-label="Policy navigation">
+            <div class="legal-toc-card">
+              <div class="legal-toc-title">ON THIS PAGE</div>
+              <a href="#overview">01 · Overview</a>
+              <a href="#collection">02 · Information</a>
+              <a href="#payments">03 · Payments & Pro</a>
+              <a href="#restore">04 · Restore Pro</a>
+              <a href="#refunds">05 · Purchase policy</a>
+              <a href="#future">06 · Future features</a>
+              <a href="#contact">07 · Contact</a>
+              <div class="toc-tip"><strong>Good to know:</strong> DailyDesk's everyday reminder experience is designed to remain local-first. Pro purchases add only the entitlement information required to manage paid access and restoration.</div>
+            </div>
+          </aside>
 
-      <div class="policy-content">
-        <article class="policy-card" id="overview">
-          <span class="label">1 · OVERVIEW</span>
-          <h2>Built to be useful without being invasive.</h2>
-          <p>DailyDesk is intended to function as a local-first browser extension. Core reminder settings and day-to-day reminder behavior are designed to remain on the user's device rather than requiring a cloud account.</p>
-        </article>
+          <div class="legal-content">
+            <div class="legal-intro"><strong>A plain-language summary</strong><span>This page is written to make the important parts easy to understand before you use or purchase DailyDesk.</span></div>
 
-        <article class="policy-card" id="collection">
-          <span class="label">2 · INFORMATION</span>
-          <h2>What the product may process.</h2>
-          <p>The Free experience does not require an account. For Pro purchases, the activation system may process the purchase email and entitlement information needed to confirm an active purchase and restore Pro on another device.</p>
-          <ul>
-            <li>Local reminder and preference data is designed to stay on the device.</li>
-            <li>Pro entitlement records may include purchase email, plan, payment reference and entitlement dates.</li>
-            <li>The product does not need the contents of your personal reminders in order to verify a Pro purchase.</li>
-          </ul>
-        </article>
+            <article class="legal-section" id="overview">
+              <span class="legal-num">01</span>
+              <h2>Built to be useful without being invasive.</h2>
+              <p>DailyDesk is intended to function as a local-first browser extension. Core reminder settings and day-to-day reminder behavior are designed to remain on the user's device rather than requiring a cloud account.</p>
+            </article>
 
-        <article class="policy-card" id="payments">
-          <span class="label">3 · PAYMENTS</span>
-          <h2>Payments are processed by the payment provider.</h2>
-          <p>DailyDesk uses its payment provider to process purchases. The DailyDesk backend uses entitlement information supplied by the payment flow to determine whether Pro access is active. Payment credentials are handled by the payment provider rather than stored as part of the DailyDesk extension.</p>
-        </article>
+            <article class="legal-section" id="collection">
+              <span class="legal-num">02</span>
+              <h2>What the product may process.</h2>
+              <p>The Free experience does not require an account. For Pro purchases, the activation system may process the purchase email and entitlement information needed to confirm an active purchase and restore Pro on another device.</p>
+              <ul>
+                <li>Local reminder and preference data is designed to stay on the device.</li>
+                <li>Pro entitlement records may include purchase email, plan, payment reference and entitlement dates.</li>
+                <li>The product does not need the contents of your personal reminders in order to verify a Pro purchase.</li>
+              </ul>
+            </article>
 
-        <article class="policy-card" id="restore">
-          <span class="label">4 · PRO RESTORE</span>
-          <h2>Your Pro purchase is tied to the purchase identity.</h2>
-          <p>The account-based Pro design is intended to let an eligible customer restore an active Pro entitlement on another compatible device using the purchase email associated with the entitlement. The customer should not need to manually enter a Razorpay payment ID for normal restore.</p>
-        </article>
+            <article class="legal-section" id="payments">
+              <span class="legal-num">03</span>
+              <h2>Payments are processed by the payment provider.</h2>
+              <p>DailyDesk uses its payment provider to process purchases. The DailyDesk backend uses entitlement information supplied by the payment flow to determine whether Pro access is active. Payment credentials are handled by the payment provider rather than stored as part of the DailyDesk extension.</p>
+              <div class="legal-note">The price, billing interval and included features are shown before purchase. Please review the selected plan before completing payment.</div>
+            </article>
 
-        <article class="policy-card callout" id="refunds">
-          <span class="label">5 · PURCHASE POLICY</span>
-          <h2>No-refund policy for DailyDesk Pro.</h2>
-          <p>All DailyDesk Pro purchases are final and non-refundable, except where a refund is required by applicable law or by the payment provider's rules. Please review the selected plan, price and included Pro features before completing a purchase.</p>
-        </article>
+            <article class="legal-section" id="restore">
+              <span class="legal-num">04</span>
+              <h2>Your Pro purchase is tied to the purchase identity.</h2>
+              <p>The account-based Pro design is intended to let an eligible customer restore an active Pro entitlement on another compatible device using the purchase email associated with the entitlement. The customer should not need to manually enter a Razorpay payment ID for normal restore.</p>
+            </article>
 
-        <article class="policy-card" id="future">
-          <span class="label">6 · FUTURE FEATURES</span>
-          <h2>Future data use will be disclosed before expansion.</h2>
-          <p>Cloud Sync and AI-powered insights are planned features. This policy will be updated before those capabilities are introduced in a way that requires additional personal or usage data.</p>
-        </article>
+            <article class="legal-section legal-callout" id="refunds">
+              <span class="legal-num">05</span>
+              <h2>No-refund policy for DailyDesk Pro.</h2>
+              <p>All DailyDesk Pro purchases are final and non-refundable, except where a refund is required by applicable law or by the payment provider's rules. Please review the selected plan, price and included Pro features before completing a purchase.</p>
+            </article>
 
-        <article class="policy-card" id="contact">
-          <span class="label">7 · CONTACT</span>
-          <h2>Need help with a purchase or policy question?</h2>
-          <p>Before production publishing, replace the placeholder support address in the website footer with the official DailyDesk support email.</p>
-          <div class="policy-actions">
-            <a class="primary-action" href="index.html">Back to DailyDesk</a>
-            <a class="secondary-action" href="index.html#pricing">View Pro plans</a>
+            <article class="legal-section" id="future">
+              <span class="legal-num">06</span>
+              <h2>Future data use will be disclosed before expansion.</h2>
+              <p>Cloud Sync and AI-powered insights are planned features. This policy will be updated before those capabilities are introduced in a way that requires additional personal or usage data.</p>
+            </article>
+
+            <article class="legal-section" id="contact">
+              <span class="legal-num">07</span>
+              <h2>Need help with a purchase or policy question?</h2>
+              <p>Before production publishing, replace the placeholder support address in the website footer with the official DailyDesk support email.</p>
+              <div class="legal-actions"><a class="legal-primary" href="index.html">Back to DailyDesk</a><a class="legal-secondary" href="index.html#pricing">View Pro plans</a></div>
+            </article>
           </div>
-        </article>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer-main section">
-      <div class="footer-brand">
-        <a class="brand" href="index.html"><span class="brand-icon"><img src="icon48.png" alt=""></span><span class="brand-name">DailyDesk</span></a>
-        <p>Work focused. Move regularly. Reset often.</p>
-      </div>
+      <div class="footer-brand"><a class="brand" href="index.html"><span class="brand-icon"><img src="icon48.png" alt=""></span><span class="brand-name">DailyDesk</span></a><p>Work focused. Move regularly. Reset often.</p></div>
       <div class="footer-links">
         <div><b>Product</b><a href="index.html#features">Features</a><a href="index.html#wellness">Wellness</a><a href="index.html#how">How it works</a><a href="index.html#pricing">Pricing</a></div>
         <div><b>Support</b><a href="index.html#faq">FAQ</a><a href="privacy.html">Privacy & policy</a><a href="mailto:YOUR-EMAIL@example.com">Contact</a></div>
@@ -131,24 +180,17 @@
   </footer>
 
   <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const nav = document.getElementById('nav');
-    menuBtn?.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-    });
-    nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      nav.classList.remove('open');
-      menuBtn?.setAttribute('aria-expanded', 'false');
-    }));
-    const scrollProgress = document.getElementById('scrollProgress');
-    const updateProgress = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      const value = max > 0 ? (window.scrollY / max) * 100 : 0;
-      if (scrollProgress) scrollProgress.style.width = value + '%';
-    };
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    updateProgress();
+    const menuBtn=document.getElementById('menuBtn');
+    const nav=document.getElementById('nav');
+    menuBtn?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+    nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn?.setAttribute('aria-expanded','false');}));
+    const progress=document.getElementById('scrollProgress');
+    const updateProgress=()=>{const max=document.documentElement.scrollHeight-window.innerHeight; if(progress)progress.style.width=(max>0?(window.scrollY/max)*100:0)+'%';};
+    window.addEventListener('scroll',updateProgress,{passive:true});updateProgress();
+    const sections=[...document.querySelectorAll('.legal-section')];
+    const toc=[...document.querySelectorAll('.legal-toc a')];
+    const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){toc.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));}})},{rootMargin:'-25% 0px -60% 0px',threshold:0});
+    sections.forEach(s=>observer.observe(s));
   </script>
 </body>
 </html>
