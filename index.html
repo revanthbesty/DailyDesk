@@ -3,329 +3,290 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="DailyDesk is a calm Chrome desk companion for movement, eye breaks, hydration, wellness resets, personal reminders, quick pause controls and customizable routines.">
-  <meta name="theme-color" content="#071327">
-  <title>DailyDesk — Work better. Break better.</title>
+  <meta name="description" content="DailyDesk helps you build a healthier, more focused work rhythm with gentle movement, eye, hydration, wellness and personal reminders.">
+  <meta name="theme-color" content="#09122b">
+  <title>DailyDesk — A better work rhythm, one small cue at a time.</title>
   <link rel="icon" href="icon128.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="page-bg" aria-hidden="true">
-    <span class="blob blob-a"></span>
-    <span class="blob blob-b"></span>
-    <span class="blob blob-c"></span>
-    <span class="grid-glow"></span>
+  <div class="site-bg" aria-hidden="true">
+    <div class="mesh mesh-1"></div><div class="mesh mesh-2"></div><div class="mesh mesh-3"></div>
+    <div class="stars"></div>
   </div>
 
-  <header class="site-header" id="top">
-    <div class="nav-shell">
+  <header class="header" id="top">
+    <div class="nav-wrap">
       <a class="brand" href="#top" aria-label="DailyDesk home">
-        <span class="brand-mark"><img src="icon48.png" alt=""></span>
-        <span class="brand-word">DailyDesk</span>
-        <span class="brand-badge">CHROME</span>
+        <span class="brand-icon"><img src="icon48.png" alt=""></span>
+        <span class="brand-name">DailyDesk</span>
       </a>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-      <nav class="nav-links" id="siteNav" aria-label="Primary navigation">
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      <nav class="nav" id="nav">
         <a href="#features">Features</a>
         <a href="#wellness">Wellness</a>
-        <a href="#experience">Experience</a>
+        <a href="#how">How it works</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
         <a href="privacy.html">Privacy</a>
-        <a class="nav-cta" href="#pricing">Get Pro <span>↗</span></a>
+        <a class="nav-button" href="#pricing">Get Pro <span>↗</span></a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero section-shell">
+    <section class="hero section" aria-labelledby="hero-title">
       <div class="hero-copy reveal">
-        <div class="eyebrow gradient-eyebrow"><span class="eyebrow-dot"></span> A SMARTER WORKDAY STARTS SMALL</div>
-        <h1>Stay focused.<br><span>Feel better while you work.</span></h1>
-        <p class="hero-lead">DailyDesk brings small, timely cues into your workday — move, rest your eyes, drink water, breathe, reset and remember what matters without adding another noisy dashboard.</p>
+        <div class="pill gradient-pill"><span class="pulse"></span> YOUR PERSONAL WORK-RHYTHM COMPANION</div>
+        <h1 id="hero-title">Work deeply.<br><span>Reset intentionally.</span></h1>
+        <p class="hero-sub">DailyDesk turns long computer days into a healthier rhythm with gentle, timely cues to move, rest your eyes, drink water, breathe, reset and remember what matters.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#pricing">Explore DailyDesk <span>→</span></a>
-          <a class="btn btn-secondary" href="#features">See what it does</a>
+          <a class="button primary" href="#pricing">Explore Pro <span>→</span></a>
+          <a class="button secondary" href="#features">See everything included</a>
         </div>
-        <div class="hero-microproof">
-          <span><b>✓</b> Lightweight Chrome extension</span>
-          <span><b>✓</b> Free plan forever</span>
-          <span><b>✓</b> Pro purchase restore</span>
+        <div class="hero-proof">
+          <div><b>✓</b> Free plan forever</div><div><b>✓</b> Lightweight extension</div><div><b>✓</b> Restore Pro on another device</div>
         </div>
       </div>
 
-      <div class="hero-stage reveal delay-1" aria-label="DailyDesk interface preview">
-        <div class="hero-ring ring-one"></div><div class="hero-ring ring-two"></div>
-        <div class="floating-note note-one"><span class="note-icon mint">✓</span><div><strong>Break complete</strong><small>20 sec reset done</small></div></div>
-        <div class="floating-note note-two"><span class="note-icon violet">✦</span><div><strong>Wellness reset</strong><small>Posture check in 2 min</small></div></div>
-        <div class="floating-note note-three"><span class="note-icon aqua">💧</span><div><strong>Hydration</strong><small>Next cue in 18 min</small></div></div>
+      <div class="hero-art reveal delay-1" aria-label="DailyDesk interface preview">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
+        <div class="float-card float-water"><span>💧</span><div><b>Hydration cue</b><small>Time for a sip</small></div></div>
+        <div class="float-card float-well"><span>✦</span><div><b>Wellness reset</b><small>Posture • 20 sec</small></div></div>
+        <div class="float-card float-break"><span>◌</span><div><b>Eye reset</b><small>Look away & refocus</small></div></div>
 
-        <div class="app-window">
-          <div class="app-toolbar"><div class="window-dots"><span></span><span></span><span></span></div><span class="toolbar-title">DAILYDESK</span><div class="toolbar-pill"><span></span> ACTIVE</div></div>
-          <div class="app-content">
-            <div class="app-topline">
-              <div><small>YOUR WORK RHYTHM</small><h3>Good work, better breaks.</h3></div>
-              <div class="mini-avatar">RD</div>
-            </div>
-            <div class="focus-card">
-              <div class="focus-copy"><span class="label">NEXT BREAK</span><strong>18<span>min</span></strong><p>Time for a quick eye reset.</p><div class="progress"><i style="width:72%"></i></div></div>
-              <div class="focus-ring"><div>72<span>%</span></div></div>
-            </div>
-            <div class="mini-cards">
-              <div class="mini-card"><span class="mini-ico move">↗</span><div><strong>Move</strong><small>Every 30 min</small></div><b>ON</b></div>
-              <div class="mini-card"><span class="mini-ico eyes">◌</span><div><strong>Eyes</strong><small>Every 20 min</small></div><b>ON</b></div>
-              <div class="mini-card"><span class="mini-ico water">⌁</span><div><strong>Water</strong><small>Every 45 min</small></div><b>ON</b></div>
-              <div class="mini-card"><span class="mini-ico pro">✦</span><div><strong>Wellness</strong><small>4 Pro prompts</small></div><b>PRO</b></div>
-            </div>
-            <div class="app-footer-row"><div><span class="live-dot"></span><strong>Today's rhythm</strong></div><div class="bar-chart" aria-hidden="true"><i style="height:30%"></i><i style="height:55%"></i><i style="height:72%"></i><i style="height:44%"></i><i style="height:86%"></i><i style="height:64%"></i><i style="height:92%"></i><i style="height:70%"></i></div></div>
+        <div class="app-card">
+          <div class="app-top">
+            <div class="brand-mini"><img src="icon48.png" alt=""><span>DailyDesk</span></div>
+            <div class="status"><i></i> ACTIVE</div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="proof-strip reveal" aria-label="DailyDesk benefits">
-      <div><span class="proof-icon blue">◷</span><div><strong>Gentle by default</strong><small>Useful cues, not constant interruptions.</small></div></div>
-      <div><span class="proof-icon violet">⚙</span><div><strong>Your routine, your rules</strong><small>Choose intervals, durations and presets.</small></div></div>
-      <div><span class="proof-icon mint">✦</span><div><strong>Wellness when you need it</strong><small>Pro adds focused reset prompts.</small></div></div>
-      <div><span class="proof-icon amber">✓</span><div><strong>Pause when life happens</strong><small>Silence reminders for meetings or focus blocks.</small></div></div>
-    </section>
-
-    <section id="features" class="section-shell section-light">
-      <div class="section-head reveal">
-        <div class="eyebrow">EVERYDAY FEATURES</div>
-        <h2>Everything you need to build a better work rhythm.</h2>
-        <p>DailyDesk is more than a timer. It combines the small reminders, controls and routines people actually need during long computer days.</p>
-      </div>
-
-      <div class="feature-grid">
-        <article class="feature-card feature-primary reveal"><div class="card-top"><span class="feature-icon gradient-blue">↗</span><span class="card-number">01</span></div><h3>Movement reminders</h3><p>Choose when DailyDesk nudges you to stand, stretch or take a short walk.</p><div class="micro-ui"><span>Next movement</span><strong>12 min</strong><i></i></div></article>
-        <article class="feature-card reveal delay-1"><div class="card-top"><span class="feature-icon gradient-mint">◌</span><span class="card-number">02</span></div><h3>Eye resets</h3><p>Get simple visual breaks that encourage you to look away, breathe and refocus.</p><div class="dots-ui"><i></i><i></i><i></i><i></i><i></i><b>20 min</b></div></article>
-        <article class="feature-card reveal delay-2"><div class="card-top"><span class="feature-icon gradient-aqua">⌁</span><span class="card-number">03</span></div><h3>Hydration cues</h3><p>Keep water in your routine even when you are deep in work.</p><div class="water-ui"><span></span><span></span><span></span><span></span><span class="muted"></span><span class="muted"></span></div></article>
-        <article class="feature-card reveal"><div class="card-top"><span class="feature-icon gradient-violet">⚙</span><span class="card-number">04</span></div><h3>Flexible intervals</h3><p>Use ready-made values or create your own custom schedule for movement, eyes and water.</p><div class="chips-ui"><span>20</span><span class="active">30</span><span>45</span><span>60</span><small>minutes</small></div></article>
-        <article class="feature-card feature-wide reveal delay-1"><div class="card-top"><span class="feature-icon gradient-amber">◫</span><span class="card-number">05</span></div><h3>Break durations that fit you</h3><p>Choose 20 seconds, 40 seconds, 1 minute, 2 minutes or a custom duration. Each reminder can feel quick or restorative depending on your workflow.</p><div class="duration-ui"><span>20s</span><span>40s</span><span class="active">1m</span><span>2m</span><span>Custom</span></div></article>
-        <article class="feature-card reveal delay-2"><div class="card-top"><span class="feature-icon gradient-pink">⏸</span><span class="card-number">06</span></div><h3>Quick pause controls</h3><p>Pause all reminders for 30 minutes, 1 hour or until tomorrow when you need uninterrupted time.</p><div class="pause-ui"><strong>Pause all</strong><span>1 hour</span><button type="button" tabindex="-1">✓</button></div></article>
-        <article class="feature-card reveal"><div class="card-top"><span class="feature-icon gradient-indigo">✦</span><span class="card-number">07</span></div><h3>Daily motivation</h3><p>Use the Daily Boost area for a small reset when you need a little extra momentum.</p><div class="quote-ui">“Small steps compound.” <span>↻</span></div></article>
-        <article class="feature-card reveal delay-1"><div class="card-top"><span class="feature-icon gradient-cyan">⚡</span><span class="card-number">08</span></div><h3>Quick setup presets</h3><p>Start with Gentle, Balanced or Active and let DailyDesk configure the reminder rhythm for you.</p><div class="preset-ui"><span>🌿 Gentle</span><span class="active">⚡ Balanced</span><span>💪 Active</span></div></article>
-        <article class="feature-card reveal delay-2"><div class="card-top"><span class="feature-icon gradient-green">🔔</span><span class="card-number">09</span></div><h3>Notification test</h3><p>Run a built-in test to confirm Windows and Chrome notifications are ready.</p><div class="test-ui"><span class="signal"></span><strong>Notifications ready</strong><b>Test</b></div></article>
-        <article class="feature-card feature-wide reveal"><div class="card-top"><span class="feature-icon gradient-purple">📅</span><span class="card-number">10</span></div><h3>Personal reminders & routines</h3><p>Add tasks, meetings and habits with a date, time, custom lead time and repeat rules for daily, weekdays, weekly or monthly schedules.</p><div class="calendar-ui"><span>Today</span><strong>Meeting with my boss</strong><small>5 min before · Weekdays</small><em>4:30 PM</em></div></article>
-      </div>
-    </section>
-
-    <section id="wellness" class="section-shell wellness-section">
-      <div class="wellness-shell reveal">
-        <div class="wellness-copy">
-          <div class="eyebrow light">DAILYDESK PRO · WELLNESS</div>
-          <h2>Turn “I should take a break” into a tiny action.</h2>
-          <p>Pro wellness prompts are designed as short, friendly resets that fit naturally into computer-heavy work instead of becoming another task to manage.</p>
-          <div class="wellness-list">
-            <div><span>01</span><b>Blink & eye reset</b><small>Short visual resets for screen-heavy sessions.</small></div>
-            <div><span>02</span><b>Posture check</b><small>A quick cue to sit tall and reset your position.</small></div>
-            <div><span>03</span><b>Breathing reset</b><small>Pause and take a calmer breath before returning to focus.</small></div>
-            <div><span>04</span><b>Short walk</b><small>Gentle movement prompts that help interrupt long sitting stretches.</small></div>
+          <div class="greeting"><div><small>YOUR WORK RHYTHM</small><h3>Make room for better breaks.</h3></div><div class="avatar">RD</div></div>
+          <div class="next-card">
+            <div><small>NEXT RESET</small><strong>18<span>min</span></strong><p>Quick eye reset. You'll be back in the flow.</p><div class="track"><i></i></div></div>
+            <div class="score"><div>72<span>%</span></div><small>today</small></div>
           </div>
-          <a class="text-link light-link" href="#pricing">See why Pro is worth it <span>→</span></a>
-        </div>
-        <div class="wellness-visual" aria-hidden="true">
-          <div class="wellness-glow glow-pink"></div><div class="wellness-glow glow-violet"></div>
-          <div class="phone-card">
-            <div class="phone-top"><span>DAILYDESK</span><span>09:42</span></div>
-            <div class="phone-content">
-              <span class="pro-chip">WELLNESS RESET</span>
-              <h3>Take 20 seconds<br>to reset.</h3>
-              <p>Drop your shoulders. Inhale gently. Exhale slowly.</p>
-              <div class="breathing-orb"><span></span><b>IN · OUT</b></div>
-              <button type="button" tabindex="-1">I'm ready</button>
-            </div>
-            <div class="phone-bottom"><span></span> Rhythm looks good</div>
+          <div class="mini-grid">
+            <div class="mini"><span class="ico ico-blue">↗</span><div><b>Move</b><small>Every 30 min</small></div><em>ON</em></div>
+            <div class="mini"><span class="ico ico-mint">◌</span><div><b>Eyes</b><small>Every 20 min</small></div><em>ON</em></div>
+            <div class="mini"><span class="ico ico-cyan">⌁</span><div><b>Water</b><small>Every 45 min</small></div><em>ON</em></div>
+            <div class="mini"><span class="ico ico-pink">✦</span><div><b>Wellness</b><small>4 Pro prompts</small></div><em>PRO</em></div>
           </div>
-          <div class="wellness-float float-a"><span>✦</span><div><b>Animated prompt</b><small>5-second reset</small></div></div>
-          <div class="wellness-float float-b"><span>✓</span><div><b>4 wellness cues</b><small>Choose what fits your routine</small></div></div>
+          <div class="app-bottom"><div><span class="tiny-dot"></span> Today's rhythm</div><div class="bars" aria-hidden="true"><i style="--h:34%"></i><i style="--h:54%"></i><i style="--h:71%"></i><i style="--h:46%"></i><i style="--h:84%"></i><i style="--h:66%"></i><i style="--h:92%"></i><i style="--h:72%"></i></div></div>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="section-shell section-soft">
-      <div class="section-head center reveal"><div class="eyebrow">THE DAILYDESK EXPERIENCE</div><h2>From first install to a smoother workday.</h2><p>Everything is built around one idea: make healthy interruptions easy enough that you actually use them.</p></div>
-      <div class="experience-grid">
-        <article class="experience-card reveal"><div class="experience-icon e1">1</div><h3>Pick your rhythm</h3><p>Use Gentle, Balanced or Active presets, then fine-tune intervals and break durations.</p><span>Set once. Adjust anytime.</span></article>
-        <article class="experience-card reveal delay-1"><div class="experience-icon e2">2</div><h3>Work without clutter</h3><p>DailyDesk stays in the background while you work and uses desktop notifications when a cue is due.</p><span>Focus first. Reminder second.</span></article>
-        <article class="experience-card reveal delay-2"><div class="experience-icon e3">3</div><h3>Take the cue</h3><p>Stand, stretch, rest your eyes, drink water, breathe, walk or handle a personal reminder.</p><span>Small reset. Back to work.</span></article>
-        <article class="experience-card reveal"><div class="experience-icon e4">4</div><h3>Pause when needed</h3><p>Meetings and deep-focus periods are not exceptions — they are part of the routine.</p><span>Pause for 30 min, 1 hour or tomorrow.</span></article>
-      </div>
+    <section class="brand-strip section reveal" aria-label="Browser positioning">
+      <div class="strip-copy"><span class="mini-label">BUILT TO FIT YOUR WORKDAY</span><strong>Start with Chrome. Take the DailyDesk experience where your users work.</strong></div>
+      <div class="browser-row"><span>◉ Chrome</span><span>◈ Edge</span><span>◆ Brave</span><span>◌ Opera</span><span>+ Chromium browsers</span></div>
+    </section>
 
-      <div class="theme-showcase reveal">
-        <div><div class="eyebrow">MAKE IT YOURS</div><h3>Free starts simple. Pro adds a full visual palette.</h3><p>Choose from Light, System and Default on Free. Pro adds colorful themes including Ocean, Lavender, Forest, Sunset, Rose, Candy Pop, Peach Cream, Sky Blue, Berry Glow, Sunshine, Aqua Fresh, Cosmic Night and Slate, plus Midnight / Dark.</p></div>
-        <div class="theme-pills" aria-label="Theme examples"><span class="t-ocean">Ocean</span><span class="t-lavender">Lavender</span><span class="t-forest">Forest</span><span class="t-sunset">Sunset</span><span class="t-rose">Rose</span><span class="t-candy">Candy Pop</span><span class="t-cosmic">Cosmic Night</span></div>
+    <section id="features" class="section content-section">
+      <div class="section-intro reveal"><span class="eyebrow blue">THE EVERYDAY TOOLKIT</span><h2>Small nudges. <span>Big difference.</span></h2><p>Everything in DailyDesk is designed around one idea: help you keep working well, not simply work longer.</p></div>
+      <div class="feature-bento">
+        <article class="feature feature-large reveal"><div class="feature-icon blue-icon">↗</div><div><span class="feature-number">01</span><h3>Movement reminders</h3><p>Set gentle prompts to stand, stretch or take a short walk before the day disappears into your chair.</p></div><div class="feature-ui"><b>Next movement</b><strong>12 min</strong><div class="spark"><i style="--h:35%"></i><i style="--h:58%"></i><i style="--h:48%"></i><i style="--h:78%"></i><i style="--h:62%"></i><i style="--h:88%"></i></div></div></article>
+        <article class="feature reveal delay-1"><div class="feature-icon mint-icon">◌</div><span class="feature-number">02</span><h3>Eye resets</h3><p>Simple prompts encourage you to look away, breathe and refocus.</p><div class="progress-chip"><span></span><span></span><span></span><span></span><b>20 min</b></div></article>
+        <article class="feature reveal delay-2"><div class="feature-icon aqua-icon">⌁</div><span class="feature-number">03</span><h3>Hydration cues</h3><p>Keep water in your routine even when you are deep in work.</p><div class="water-dots"><i></i><i></i><i></i><i></i><i class="muted"></i><i class="muted"></i></div></article>
+        <article class="feature reveal"><div class="feature-icon violet-icon">⚙</div><span class="feature-number">04</span><h3>Flexible intervals</h3><p>Choose ready-made timings or create custom intervals for movement, eyes and water.</p><div class="choice-row"><span>20</span><span class="active">30</span><span>45</span><span>60</span><small>min</small></div></article>
+        <article class="feature wide reveal delay-1"><div class="feature-icon amber-icon">◫</div><div class="wide-copy"><span class="feature-number">05</span><h3>Breaks that match your pace</h3><p>Use 20s, 40s, 1m, 2m or custom durations. A break can be a tiny reset or a real pause—your choice.</p></div><div class="duration-row"><span>20s</span><span>40s</span><span class="active">1m</span><span>2m</span><span>Custom</span></div></article>
+        <article class="feature reveal"><div class="feature-icon pink-icon">⏸</div><span class="feature-number">06</span><h3>Pause when life happens</h3><p>Silence reminders for 30 minutes, 1 hour or until tomorrow.</p><div class="pause-demo"><b>Pause all</b><span>1 hour</span><i>✓</i></div></article>
+        <article class="feature reveal delay-1"><div class="feature-icon indigo-icon">✦</div><span class="feature-number">07</span><h3>Daily Boost</h3><p>Keep motivation close with a simple dose of perspective when you need it.</p><blockquote>“Small steps compound.” <span>↻</span></blockquote></article>
+        <article class="feature reveal delay-2"><div class="feature-icon cyan-icon">⚡</div><span class="feature-number">08</span><h3>Quick Setup presets</h3><p>Choose Gentle, Balanced or Active and get moving in seconds.</p><div class="preset-row"><span>🌿 Gentle</span><span class="active">⚡ Balanced</span><span>💪 Active</span></div></article>
+        <article class="feature feature-wide2 reveal"><div class="feature-icon coral-icon">⌁</div><div><span class="feature-number">09</span><h3>Personal reminders & routines</h3><p>Create one-time, daily, weekday, weekly and monthly reminders for meetings, tasks, follow-ups and the moments you cannot afford to forget.</p></div><div class="routine-list"><span><b>09:30</b> Team sync</span><span><b>13:00</b> Lunch break</span><span><b>16:30</b> Stretch + water</span></div></article>
       </div>
     </section>
 
-    <section class="section-shell pro-section">
-      <div class="pro-banner reveal">
-        <div><div class="eyebrow">WHY PEOPLE UPGRADE</div><h2>Free gives you the rhythm.<br><span>Pro gives you more control.</span></h2><p>Pro is designed for people who want more flexibility, richer customization and dedicated wellness tools — without a complicated subscription app.</p></div>
-        <div class="pro-stats"><div><strong>4</strong><span>wellness tools</span></div><div><strong>17</strong><span>theme choices</span></div><div><strong>3</strong><span>quick setup presets</span></div></div>
-      </div>
-    </section>
-
-    <section id="pricing" class="pricing-section">
-      <div class="section-shell">
-        <div class="section-head center reveal"><div class="eyebrow gradient-eyebrow">SIMPLE PRO PRICING</div><h2>Pay for more control — not for clutter.</h2><p>DailyDesk Free stays useful. Pro is for people who want more personalization, wellness and flexibility.</p></div>
-
-        <div class="pricing-explainer reveal">
-          <div><span class="legend-dot free-dot"></span><strong>Free</strong><small>Core reminders and everyday controls.</small></div>
-          <div><span class="legend-dot pro-dot"></span><strong>Pro</strong><small>More customization, wellness and visual choices.</small></div>
-          <div><span class="legend-dot soon-dot"></span><strong>Planned</strong><small>Future additions clearly marked.</small></div>
-        </div>
-
-        <div class="pricing-grid" id="pricingGrid">
-          <article class="price-card" tabindex="0" data-plan="monthly">
-            <div class="price-card-glow"></div><div class="plan-top"><span class="plan-badge">FLEXIBLE</span><span class="plan-mini">Try Pro monthly</span></div>
-            <h3>Monthly</h3><div class="price"><strong>₹49</strong><span>/ month</span></div><p>Best when you want the full Pro experience without a longer commitment.</p>
-            <div class="value-line"><span>Compared with Free</span><b>More control</b></div>
-            <ul><li>Everything in Free</li><li>All Pro wellness tools</li><li>Multiple custom schedules</li><li>Premium theme palette</li><li>Account-based Pro restore</li></ul>
-            <a class="btn btn-plan btn-outline" href="#contact">Choose Monthly <span>→</span></a>
-          </article>
-
-          <article class="price-card" tabindex="0" data-plan="quarterly">
-            <div class="price-card-glow"></div><div class="plan-top"><span class="plan-badge">SMARTER VALUE</span><span class="plan-mini">₹33 / month effective</span></div>
-            <h3>Quarterly</h3><div class="price"><strong>₹99</strong><span>/ 3 months</span></div><p>A lower-commitment option that costs less than paying monthly for the same period.</p>
-            <div class="value-line"><span>Save vs 3 monthly payments</span><b>₹48</b></div>
-            <ul><li>Everything in Free</li><li>All Pro wellness tools</li><li>Multiple custom schedules</li><li>Premium theme palette</li><li>Account-based Pro restore</li></ul>
-            <a class="btn btn-plan btn-outline" href="#contact">Choose Quarterly <span>→</span></a>
-          </article>
-
-          <article class="price-card featured" tabindex="0" data-plan="yearly" aria-label="Yearly plan, most popular">
-            <div class="price-card-glow"></div><span class="popular-ribbon">MOST POPULAR</span><div class="plan-top"><span class="plan-badge">BEST VALUE</span><span class="plan-mini">₹24.92 / month effective</span></div>
-            <h3>Yearly</h3><div class="price"><strong>₹299</strong><span>/ year</span></div><p>For regular DailyDesk users who want Pro for the whole year at the lowest recurring cost.</p>
-            <div class="value-line"><span>Save vs monthly</span><b>₹289 / year</b></div>
-            <ul><li>Everything in Free</li><li>All Pro wellness tools</li><li>Multiple custom schedules</li><li>Premium theme palette</li><li>Account-based Pro restore</li></ul>
-            <a class="btn btn-plan btn-primary" href="#contact">Choose Yearly <span>→</span></a>
-          </article>
-
-          <article class="price-card lifetime-card" tabindex="0" data-plan="lifetime">
-            <div class="price-card-glow"></div><div class="plan-top"><span class="plan-badge">ONE-TIME</span><span class="plan-mini">No recurring payment</span></div>
-            <h3>Lifetime</h3><div class="price"><strong>₹599</strong><span>one-time</span></div><p>Pay once and keep the current Pro experience for the lifetime of DailyDesk.</p>
-            <div class="value-line"><span>Break-even vs yearly</span><b>2 years</b></div>
-            <ul><li>All current Pro features</li><li>Future premium features</li><li>No recurring payments</li><li>Restore Pro on another device</li><li>Lifetime access while DailyDesk exists</li></ul>
-            <a class="btn btn-plan btn-outline" href="#contact">Choose Lifetime <span>→</span></a>
-          </article>
-        </div>
-        <div class="pricing-note"><span>✓</span> Payments are planned through Razorpay. <span>•</span> Pro is linked to your purchase email. <span>•</span> Restore Pro on another device is part of the account-based design.</div>
-
-        <div class="comparison-wrap reveal">
-          <div class="comparison-head"><div><div class="eyebrow">WHAT ARE YOU ACTUALLY PAYING FOR?</div><h3>Clear Free vs Pro value.</h3></div><p>There is no hidden feature wall. This table shows where Pro adds meaningful capability.</p></div>
-          <div class="comparison-table">
-            <div class="comparison-row header"><span>Feature</span><b>Free</b><b>Pro</b></div>
-            <div class="comparison-row"><span>Movement, eye & water reminders</span><b>✓</b><b>✓</b></div>
-            <div class="comparison-row"><span>Custom intervals</span><b>✓</b><b>✓</b></div>
-            <div class="comparison-row"><span>Break durations & custom breaks</span><b>✓</b><b>✓</b></div>
-            <div class="comparison-row"><span>Quick Setup presets</span><b>✓</b><b>✓</b></div>
-            <div class="comparison-row pro-row"><span>Multiple custom schedules</span><b>—</b><b>✓</b></div>
-            <div class="comparison-row pro-row"><span>Wellness: blink, posture, breathing, walk</span><b>—</b><b>✓</b></div>
-            <div class="comparison-row pro-row"><span>17-theme visual palette</span><b>—</b><b>✓</b></div>
-            <div class="comparison-row pro-row"><span>Account-based Pro restore</span><b>—</b><b>✓</b></div>
-            <div class="comparison-row planned-row"><span>Cloud sync</span><b>—</b><b>Planned</b></div>
-            <div class="comparison-row planned-row"><span>AI-powered insights</span><b>—</b><b>Planned</b></div>
+    <section id="wellness" class="section wellness-section">
+      <div class="wellness-glow"></div>
+      <div class="wellness-grid section">
+        <div class="wellness-copy reveal"><span class="eyebrow pink">PRO WELLNESS</span><h2>Your workday deserves more than a timer.</h2><p>DailyDesk Pro adds a dedicated wellness layer—short, animated prompts that make healthy micro-breaks easier to notice and easier to act on.</p>
+          <div class="wellness-items">
+            <div><span>◌</span><div><b>Blink & Eye Reset</b><small>A quick visual reset between intense screen work.</small></div></div>
+            <div><span>◒</span><div><b>Posture Check</b><small>A gentle cue to sit tall, relax your shoulders and reset.</small></div></div>
+            <div><span>◐</span><div><b>Breathing Reset</b><small>A short guided pause to slow down and return focused.</small></div></div>
+            <div><span>⌁</span><div><b>Short Walk</b><small>A tiny invitation to get moving before the next task.</small></div></div>
           </div>
+          <a class="light-link" href="#pricing">See what Pro unlocks <span>→</span></a>
+        </div>
+        <div class="wellness-art reveal delay-1">
+          <div class="well-card back-card"><span>PRO</span><b>Wellness queue</b><small>Gentle • Animated • Timely</small></div>
+          <div class="well-card main-card"><div class="well-top"><span class="well-pro">DAILYDESK PRO</span><span>✦</span></div><div class="person"><div class="person-head"></div><div class="person-body"></div><div class="person-arm a1"></div><div class="person-arm a2"></div></div><div class="well-message"><small>POSTURE CHECK</small><strong>Shoulders down.<br>Back tall. Breathe.</strong><div class="well-timer"><i></i><span>20 sec reset</span></div></div></div>
+          <div class="well-orbit orbit-w1"></div><div class="well-orbit orbit-w2"></div>
         </div>
       </div>
     </section>
 
-    <section class="section-shell restore-section reveal">
+    <section id="how" class="section how-section">
+      <div class="section-intro center reveal"><span class="eyebrow violet">HOW IT FITS YOUR DAY</span><h2>Less app. <span>More rhythm.</span></h2><p>DailyDesk stays quietly in the background until a useful moment arrives.</p></div>
+      <div class="how-grid">
+        <article class="how-card reveal"><span class="step">01</span><div class="how-icon">⚙</div><h3>Set your rhythm</h3><p>Pick a preset or choose your own intervals, durations and reminder behavior.</p></article>
+        <div class="connector"><span>→</span></div>
+        <article class="how-card reveal delay-1"><span class="step">02</span><div class="how-icon">◷</div><h3>Stay in your flow</h3><p>DailyDesk waits in the background and nudges you only when the next cue is due.</p></article>
+        <div class="connector"><span>→</span></div>
+        <article class="how-card reveal delay-2"><span class="step">03</span><div class="how-icon">✦</div><h3>Reset. Return. Repeat.</h3><p>Take the tiny break, complete the cue and get back to what matters.</p></article>
+      </div>
+      <div class="browser-note reveal"><div class="browser-icon">◆</div><div><b>Built for the Chromium extension model</b><span>Designed for Chrome first, with a browser-expansion path for compatible Chromium stores and environments.</span></div></div>
+    </section>
+
+    <section id="pricing" class="section pricing-section">
+      <div class="pricing-bg"></div>
+      <div class="section-intro center reveal"><span class="eyebrow green">SIMPLE, HONEST PRICING</span><h2>Upgrade when <span>the extras matter.</span></h2><p>DailyDesk Free already gives you a useful work rhythm. Pro is for people who want deeper personalization, dedicated wellness tools and more freedom.</p></div>
+
+      <div class="pricing-value-bar reveal">
+        <div><span class="vicon">✓</span><div><b>Free forever</b><small>No account required for the core experience.</small></div></div>
+        <div><span class="vicon pro">✦</span><div><b>Pro unlocks more</b><small>Wellness, multiple schedules, themes and device restore.</small></div></div>
+        <div><span class="vicon save">↘</span><div><b>Longer plans save more</b><small>See exactly how much you keep in your pocket below.</small></div></div>
+      </div>
+
+      <div class="pricing-grid" id="pricingGrid">
+        <article class="price-card" data-plan="monthly" tabindex="0">
+          <div class="card-accent accent-blue"></div><div class="plan-kicker">FLEXIBLE</div><h3>Monthly</h3><div class="price"><strong>₹49</strong><span>/ month</span></div><p>Try the complete Pro experience without a longer commitment.</p>
+          <div class="save-box neutral"><b>No lock-in</b><span>Cancel before the next renewal</span></div>
+          <ul><li>Everything in Free</li><li>All 4 wellness tools</li><li>Multiple custom schedules</li><li>Premium theme palette</li><li>Pro restore on another device</li></ul>
+          <a class="plan-btn" href="#contact">Choose Monthly <span>→</span></a>
+        </article>
+
+        <article class="price-card" data-plan="quarterly" tabindex="0">
+          <div class="card-accent accent-cyan"></div><div class="plan-kicker">SMARTER VALUE</div><h3>Quarterly</h3><div class="price"><strong>₹99</strong><span>/ 3 months</span></div><p>Keep Pro for a quarter and pay less than three separate monthly renewals.</p>
+          <div class="save-box"><div><b>Save ₹48</b><span>vs ₹147 monthly</span></div><strong>₹33/mo</strong></div>
+          <ul><li>Everything in Free</li><li>All 4 wellness tools</li><li>Multiple custom schedules</li><li>Premium theme palette</li><li>Pro restore on another device</li></ul>
+          <a class="plan-btn" href="#contact">Choose Quarterly <span>→</span></a>
+        </article>
+
+        <article class="price-card" data-plan="yearly" tabindex="0">
+          <div class="card-accent accent-violet"></div><div class="plan-kicker">BEST BALANCE</div><h3>Yearly</h3><div class="price"><strong>₹299</strong><span>/ year</span></div><p>For people who want DailyDesk in their routine all year without paying the monthly rate.</p>
+          <div class="save-box"><div><b>Save ₹289</b><span>vs ₹588 monthly</span></div><strong>₹24.92/mo</strong></div>
+          <ul><li>Everything in Free</li><li>All 4 wellness tools</li><li>Multiple custom schedules</li><li>Premium theme palette</li><li>Pro restore on another device</li></ul>
+          <a class="plan-btn" href="#contact">Choose Yearly <span>→</span></a>
+        </article>
+
+        <article class="price-card" data-plan="lifetime" tabindex="0">
+          <div class="card-accent accent-pink"></div><div class="plan-kicker">ONE-TIME</div><h3>Lifetime</h3><div class="price"><strong>₹599</strong><span>one-time</span></div><p>Pay once and keep current Pro access for the lifetime of DailyDesk.</p>
+          <div class="save-box"><div><b>Save ₹577</b><span>over 24 months vs monthly</span></div><strong>13 mo. payback</strong></div>
+          <ul><li>All current Pro features</li><li>Future premium features</li><li>No recurring payments</li><li>Restore Pro on another device</li><li>Lifetime access while DailyDesk exists</li></ul>
+          <a class="plan-btn" href="#contact">Choose Lifetime <span>→</span></a>
+        </article>
+      </div>
+
+      <div class="hover-hint reveal"><span>Move your cursor over a plan.</span><b>The plan you’re considering becomes the focus.</b><span>Nothing is pre-selected.</span></div>
+
+      <div class="pricing-reason reveal">
+        <div class="reason-copy"><span class="eyebrow green">WHY PAY FOR PRO?</span><h3>Because the value is in the <span>extra control.</span></h3><p>Free handles the fundamentals. Pro is designed for people who want DailyDesk to fit their life more precisely—with a deeper wellness layer, more scheduling control and a visual experience they can make their own.</p></div>
+        <div class="reason-grid">
+          <div><b>4</b><span>current wellness tools</span></div><div><b>17</b><span>theme choices</span></div><div><b>3</b><span>quick setup presets</span></div><div><b>∞</b><span>future Pro improvements</span></div>
+        </div>
+      </div>
+
+      <div class="compare reveal">
+        <div class="compare-head"><div><span class="eyebrow blue">FREE VS PRO</span><h3>See exactly what changes.</h3></div><p>No mystery feature wall. The differences are shown plainly.</p></div>
+        <div class="compare-table">
+          <div class="compare-row head"><span>Capability</span><b>Free</b><b>Pro</b></div>
+          <div class="compare-row"><span>Movement, eye & water reminders</span><b>✓</b><b>✓</b></div>
+          <div class="compare-row"><span>Custom intervals & break durations</span><b>✓</b><b>✓</b></div>
+          <div class="compare-row"><span>Quick Setup presets</span><b>✓</b><b>✓</b></div>
+          <div class="compare-row pro-row"><span>Multiple custom schedules</span><b>—</b><b>✓</b></div>
+          <div class="compare-row pro-row"><span>Wellness: blink, posture, breathing, walk</span><b>—</b><b>✓</b></div>
+          <div class="compare-row pro-row"><span>17-theme visual palette</span><b>—</b><b>✓</b></div>
+          <div class="compare-row pro-row"><span>Account-based Pro restore</span><b>—</b><b>✓</b></div>
+          <div class="compare-row planned"><span>Cloud sync</span><b>—</b><b>Planned</b></div>
+          <div class="compare-row planned"><span>AI-powered insights</span><b>—</b><b>Planned</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section restore-section reveal" aria-label="Restore Pro">
       <div class="restore-card">
-        <div class="restore-copy"><div class="eyebrow">BUY ONCE. KEEP YOUR ACCESS.</div><h2>Change computers without losing your Pro purchase.</h2><p>The updated DailyDesk account design links Pro to the purchase identity rather than a single device. Install DailyDesk on another computer and use <strong>Restore Pro</strong> with your purchase email.</p><div class="restore-flow"><span>Purchase</span><i>→</i><span>Account entitlement</span><i>→</i><span>New device</span><i>→</i><span>Restore Pro</span></div></div>
-        <div class="restore-visual"><div class="restore-shield">✓</div><div><strong>Pro access restored</strong><small>Purchase email verified</small></div><div class="restore-mini"><span>Device A</span><span>→</span><span>Device B</span></div></div>
+        <div class="restore-copy"><span class="eyebrow pink">BUY ONCE. KEEP YOUR ACCESS.</span><h2>New computer? <span>Just restore Pro.</span></h2><p>Your Pro entitlement is designed to follow your purchase identity—not a single machine. Install DailyDesk on another device and restore access using your purchase email.</p><div class="restore-steps"><span>Purchase</span><i>→</i><span>Pro entitlement</span><i>→</i><span>New device</span><i>→</i><span>Restore Pro</span></div></div>
+        <div class="restore-demo"><div class="restore-top"><span>DAILYDESK ACCOUNT</span><b>✓</b></div><strong>Pro access restored</strong><small>Purchase email matched</small><div class="device-line"><span>Device A</span><i>↔</i><span>Device B</span></div></div>
       </div>
     </section>
 
-    <section id="faq" class="section-shell faq-section">
-      <div class="section-head center reveal"><div class="eyebrow">FAQ</div><h2>Everything you need to know before upgrading.</h2></div>
+    <section id="faq" class="section faq-section">
+      <div class="section-intro center reveal"><span class="eyebrow violet">FAQ</span><h2>Before you <span>make the switch.</span></h2><p>Simple answers to the questions a new user is likely to have.</p></div>
       <div class="faq-grid">
-        <details class="reveal" open><summary>Does DailyDesk Free require an account?</summary><p>No. The Free experience is designed to work without an account.</p></details>
-        <details class="reveal delay-1"><summary>What does Pro actually add?</summary><p>Pro adds wellness prompts, multiple custom schedule control, the full theme palette, account-based Pro restore and other premium features as they are released.</p></details>
-        <details class="reveal delay-2"><summary>What wellness tools are included?</summary><p>Pro currently includes Blink & Eye Reset, Posture Check, Breathing Reset and Short Walk prompts. They appear as short animated wellness popups.</p></details>
-        <details class="reveal"><summary>Can I change devices after buying Pro?</summary><p>The account-based restore design allows a Pro entitlement to be restored on another device using the purchase email rather than asking the customer for a Razorpay payment ID.</p></details>
-        <details class="reveal delay-1"><summary>Can I pause DailyDesk?</summary><p>Yes. Quick controls let you pause reminders for 30 minutes, 1 hour or until tomorrow.</p></details>
-        <details class="reveal delay-2"><summary>How do personal reminders work?</summary><p>You can create one-time or repeating reminders, choose how early DailyDesk should notify you and manage routines such as meetings and tasks.</p></details>
-        <details class="reveal"><summary>Is cloud sync available now?</summary><p>Not yet. Cloud sync is a planned feature and is intentionally labelled as planned on this website.</p></details>
-        <details class="reveal delay-1"><summary>Is AI included now?</summary><p>Not yet. AI-powered insights are planned for a future Pro release and are not presented as currently available.</p></details>
+        <details class="reveal" open><summary>What does DailyDesk Free include?</summary><p>Movement, eye and hydration reminders, custom intervals, break durations, Quick Setup presets, pause controls, Daily Boost and personal reminders/routines.</p></details>
+        <details class="reveal delay-1"><summary>What exactly does Pro add?</summary><p>Pro adds the four current wellness tools, multiple custom schedules, the 17-theme visual palette and account-based Pro restore, plus future premium improvements as they are released.</p></details>
+        <details class="reveal delay-2"><summary>Why should I choose Quarterly or Yearly?</summary><p>Longer plans reduce the effective monthly cost. Quarterly saves ₹48 versus three monthly payments; Yearly saves ₹289 versus twelve monthly payments.</p></details>
+        <details class="reveal"><summary>What makes Lifetime different?</summary><p>Lifetime is a one-time ₹599 purchase with no recurring payment. Compared with paying ₹49 monthly, it saves ₹577 over 24 months and reaches its payback point in roughly 13 months.</p></details>
+        <details class="reveal delay-1"><summary>Can I use Pro on another computer?</summary><p>Yes—the account-based design is intended to let you restore an active Pro entitlement on another device using the purchase email.</p></details>
+        <details class="reveal delay-2"><summary>Do I need an account to use DailyDesk Free?</summary><p>No. The Free experience remains designed to work without an account.</p></details>
+        <details class="reveal"><summary>Are Cloud Sync and AI available today?</summary><p>Not yet. They are planned features and are clearly labelled as planned on this website.</p></details>
+        <details class="reveal delay-1"><summary>Which browsers will DailyDesk support?</summary><p>DailyDesk is being built around the Chromium extension model, starting with Chrome and targeting compatible Chromium browsers next. Each browser store may have its own publishing and compatibility requirements.</p></details>
       </div>
     </section>
 
-    <section id="contact" class="section-shell final-cta reveal">
-      <div class="cta-card">
-        <div class="cta-orb orb-a"></div><div class="cta-orb orb-b"></div>
-        <div class="eyebrow light">A BETTER WORK RHYTHM STARTS SMALL</div>
-        <h2>Make your next break<br><span>a better habit.</span></h2>
-        <p>Start with DailyDesk Free. Upgrade when you want more control, more wellness and more ways to make the extension feel like yours.</p>
-        <div class="hero-actions center-actions"><a class="btn btn-white" href="#pricing">See Pro plans <span>→</span></a><a class="btn btn-dark-outline" href="#features">Explore Free features</a></div>
-        <div class="cta-trust"><span>Chrome extension</span><i></i><span>Low-cost Pro</span><i></i><span>Privacy-minded</span></div>
+    <section id="contact" class="section final-section reveal">
+      <div class="final-card">
+        <div class="final-orb orb-1"></div><div class="final-orb orb-2"></div><div class="final-orb orb-3"></div>
+        <span class="eyebrow light">YOUR NEXT BETTER WORKDAY</span>
+        <h2>Don’t wait for your body<br>to ask for a break.</h2>
+        <p>Start free. Build your rhythm. Upgrade when you want the extra control, wellness and freedom.</p>
+        <div class="hero-actions centered"><a class="button light-btn" href="#features">Explore Free</a><a class="button glass-btn" href="#pricing">Compare Pro plans <span>→</span></a></div>
+        <div class="final-proof"><span>✓ Free forever</span><span>✓ Low-cost Pro</span><span>✓ Restore on another device</span><span>✓ Privacy-minded</span></div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-shell">
-      <div class="footer-brand"><a class="brand" href="#top"><span class="brand-mark"><img src="icon48.png" alt=""></span><span class="brand-word">DailyDesk</span></a><p>Work focused. Move regularly. Reset often.</p></div>
-      <div class="footer-links"><div><strong>Product</strong><a href="#features">Features</a><a href="#wellness">Wellness</a><a href="#experience">Experience</a><a href="#pricing">Pricing</a></div><div><strong>Support</strong><a href="#faq">FAQ</a><a href="privacy.html">Privacy</a><a href="mailto:YOUR-EMAIL@example.com">Contact</a></div><div><strong>Plans</strong><a href="#pricing">Free</a><a href="#pricing">Pro</a><a href="#pricing">Restore Pro</a></div></div>
+  <footer class="footer">
+    <div class="footer-main section">
+      <div class="footer-brand"><a class="brand" href="#top"><span class="brand-icon"><img src="icon48.png" alt=""></span><span class="brand-name">DailyDesk</span></a><p>Work focused. Move regularly. Reset often.</p></div>
+      <div class="footer-links"><div><b>Product</b><a href="#features">Features</a><a href="#wellness">Wellness</a><a href="#how">How it works</a><a href="#pricing">Pricing</a></div><div><b>Support</b><a href="#faq">FAQ</a><a href="privacy.html">Privacy</a><a href="mailto:YOUR-EMAIL@example.com">Contact</a></div><div><b>Plans</b><a href="#pricing">Free</a><a href="#pricing">Pro</a><a href="#pricing">Restore Pro</a></div></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 DailyDesk. All rights reserved.</span><span>Built for calmer, healthier workdays.</span></div>
+    <div class="footer-bottom section"><span>© 2026 DailyDesk. All rights reserved.</span><span>Built for calmer, healthier workdays.</span></div>
   </footer>
 
   <script>
-    const toggle = document.getElementById('menuToggle');
-    const nav = document.getElementById('siteNav');
-    toggle?.addEventListener('click', () => {
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('nav');
+    menuBtn?.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-expanded', String(open));
     });
-    nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
       nav.classList.remove('open');
-      toggle?.setAttribute('aria-expanded', 'false');
+      menuBtn?.setAttribute('aria-expanded', 'false');
     }));
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, { threshold: 0.12 });
+    }, { threshold: .12 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+    // Pricing interaction: NOTHING is selected by default.
+    // Hover/focus makes only the plan under consideration the visual focus.
     const pricingGrid = document.getElementById('pricingGrid');
     const cards = pricingGrid ? [...pricingGrid.querySelectorAll('.price-card')] : [];
-    const clearHover = () => {
-      if (!pricingGrid) return;
-      pricingGrid.classList.remove('is-hovering');
-      cards.forEach(card => card.classList.remove('is-hovered'));
+    const clearPlanFocus = () => {
+      pricingGrid?.classList.remove('is-interacting');
+      cards.forEach(c => c.classList.remove('is-current'));
     };
     cards.forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        pricingGrid.classList.add('is-hovering');
-        cards.forEach(c => c.classList.toggle('is-hovered', c === card));
-      });
-      card.addEventListener('focusin', () => {
-        pricingGrid.classList.add('is-hovering');
-        cards.forEach(c => c.classList.toggle('is-hovered', c === card));
-      });
-      card.addEventListener('mouseleave', () => {
-        if (!pricingGrid.matches(':hover') && !pricingGrid.querySelector(':focus-within')) clearHover();
-      });
+      const focus = () => {
+        pricingGrid?.classList.add('is-interacting');
+        cards.forEach(c => c.classList.toggle('is-current', c === card));
+      };
+      card.addEventListener('mouseenter', focus);
+      card.addEventListener('focusin', focus);
     });
-    pricingGrid?.addEventListener('mouseleave', clearHover);
+    pricingGrid?.addEventListener('mouseleave', clearPlanFocus);
     pricingGrid?.addEventListener('focusout', () => setTimeout(() => {
-      if (!pricingGrid.matches(':hover') && !pricingGrid.querySelector(':focus-within')) clearHover();
-    }, 0));
+      if (!pricingGrid.matches(':hover') && !pricingGrid.querySelector(':focus-within')) clearPlanFocus();
+    }, 20));
 
-    const parallaxItems = document.querySelectorAll('.hero-ring, .floating-note');
+    // Gentle pointer parallax in the hero.
+    const heroArt = document.querySelector('.hero-art');
+    const orbits = document.querySelectorAll('.hero-art .orbit');
     window.addEventListener('mousemove', (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 2;
-      const y = (e.clientY / window.innerHeight - 0.5) * 2;
-      parallaxItems.forEach((el, i) => {
-        const depth = (i % 3 + 1) * 2;
-        el.style.transform = `translate(${x * depth}px, ${y * depth}px)`;
-      });
+      if (!heroArt || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const r = heroArt.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width - .5) * 2;
+      const y = ((e.clientY - r.top) / r.height - .5) * 2;
+      orbits.forEach((el, i) => el.style.transform = `translate(${x * (i + 1) * 2}px, ${y * (i + 1) * 2}px)`);
     });
   </script>
 </body>
