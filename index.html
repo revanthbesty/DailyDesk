@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
   <div class="site-bg" aria-hidden="true">
     <div class="mesh mesh-1"></div><div class="mesh mesh-2"></div><div class="mesh mesh-3"></div>
     <div class="stars"></div>
@@ -261,6 +262,26 @@
       nav.classList.remove('open');
       menuBtn?.setAttribute('aria-expanded', 'false');
     }));
+
+    // Active section navigation + page scroll progress.
+    const sectionIds = ['features','wellness','how','pricing','faq'];
+    const sectionLinks = [...document.querySelectorAll('.nav a[href^=\"#\"]')];
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        sectionLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+      });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+    sectionIds.forEach(id => { const el = document.getElementById(id); if (el) sectionObserver.observe(el); });
+
+    const scrollProgress = document.getElementById('scrollProgress');
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const value = max > 0 ? (window.scrollY / max) * 100 : 0;
+      if (scrollProgress) scrollProgress.style.width = value + '%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
