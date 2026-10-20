@@ -1,0 +1,16 @@
+name: Commerce Contract
+on:
+  pull_request:
+    paths:
+      - 'commercialization/**'
+      - '.github/workflows/commerce-contract.yml'
+  workflow_dispatch:
+jobs:
+  node-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test commercialization/entitlements.test.mjs
