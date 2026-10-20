@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {PRICING,PRODUCTS,validProduct,canUseFeature,planPricePaise,formatINR} from './entitlements.mjs';
+const now=1792500000;
+const pro={product:'chatsweep',tier:'pro',expires_at:now+3600,features:['bulk_export']};
+test('prices are integer paise',()=>{assert.equal(PRICING.monthlyPaise,6900);assert.equal(PRICING.yearlyPaise,49900);assert.equal(planPricePaise('yearly'),49900);});
+test('validates known products',()=>{assert.equal(PRODUCTS.length,4);assert.ok(validProduct('ai-bridge'));assert.equal(validProduct('another'),false);});
+test('allows unexpired matching premium entitlement',()=>assert.equal(canUseFeature(pro,'chatsweep','bulk_export',now),true));
+test('prevents cross-product license leakage',()=>assert.equal(canUseFeature(pro,'ai-bridge','bulk_export',now),false));
+test('denies expired, free, missing and absent features',()=>{assert.equal(canUseFeature(pro,'chatsweep','bulk_export',now+3601),false);assert.equal(canUseFeature({...pro,tier:'free'},'chatsweep','bulk_export',now),false);assert.equal(canUseFeature(undefined,'chatsweep','bulk_export',now),false);assert.equal(canUseFeature(pro,'chatsweep','other',now),false);});
+test('validates amounts',()=>{assert.match(formatINR(6900),/69/);assert.throws(()=>planPricePaise('quarterly'));assert.throws(()=>formatINR(-1));});
